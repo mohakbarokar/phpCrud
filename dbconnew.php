@@ -15,7 +15,7 @@ $password = 'Db@Password1234';
 try {
     $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    if (!$db) {
+    if ($db) {
         echo "Connected";
     }
 } catch (PDOException $e) {
