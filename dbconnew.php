@@ -6,4 +6,25 @@ if (!$dbconn){
 }else
     echo "<center><h1>Good connection</h1></center>";
 pg_close($dbconn);
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    // Prepare the SQL query
+    $stmt = $dbconn->prepare("INSERT INTO users (name, email) VALUES (:name, :email)");
+
+    // Bind parameters
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':email', $email);
+
+    // Execute the query
+    try {
+        $stmt->execute();
+        echo "Data inserted successfully!";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
 ?>
