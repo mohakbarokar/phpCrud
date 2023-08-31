@@ -10,7 +10,7 @@
 $host = 'jhhdevopsterra-pgsql-server.postgres.database.azure.com'; // Change this if your database is hosted elsewhere
 $dbname = 'postgres';
 $user = 'azureuser';
-$password = 'Db@Password1234';
+$password = 'Password@123';
 
 try {
     $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
