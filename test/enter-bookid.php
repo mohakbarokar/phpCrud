@@ -17,7 +17,7 @@
 </html>
 <?php
 $db = pg_connect("host=jhhdevopsterra-pgsql-server.postgres.database.azure.com port=5432 dbname=postgres user=azureuser password=Password@123");
-$result = pg_query($db, "SELECT * FROM book where book_id = '$_POST[bookid]'");
+$result = pg_query($db, "SELECT * FROM book where bookid = '$_POST[bookid]'");
 $row = pg_fetch_assoc($result);
 if (isset($_POST['submit']))
 {
