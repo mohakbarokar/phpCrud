@@ -31,8 +31,8 @@ if (isset($_POST['submit']))
 }
 if (isset($_POST['new']))
 {
-    $result1 = pg_query($db, "UPDATE book SET book_id = '$_POST[bookid_updated]', book_name = '$_POST[book_name_updated]', 
-author = '$_POST[author_updated]', publisher = '$_POST[publisher_updated]',date_of_publication = '$_POST[dop_updated]',
+    $result1 = pg_query($db, "UPDATE book SET bookid = '$_POST[bookid_updated]', book_name = '$_POST[book_name_updated]', 
+author = '$_POST[author_updated]', publisher = '$_POST[publisher_updated]',dop = '$_POST[dop_updated]',
 price = '$_POST[price_updated]'");
     if (!$result1)
     {
