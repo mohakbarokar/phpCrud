@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 // SQL query to select all records from your table
-$query = "SELECT * FROM your_table";
+$query = "SELECT * FROM book";
 
 // Execute the query
 $result = pg_query($conn, $query);
@@ -29,9 +29,9 @@ echo "<tr><th>ID</th><th>Name</th><th>Email</th></tr>";
 
 while ($row = pg_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['name'] . "</td>";
-    echo "<td>" . $row['email'] . "</td>";
+    echo "<td>" . $row['bookid'] . "</td>";
+    echo "<td>" . $row['book_name'] . "</td>";
+    echo "<td>" . $row['price'] . "</td>";
     echo "</tr>";
 }
 
